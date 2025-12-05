@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --aqua--: #008080;
+  --dark--: #0f0e0e;
+  --dark-gray--: #393e4695;
+  --prawn--: #f4afa1;
+  --light-white--: #fcf8f8;
+
+  --color-primary: var(--aqua--);
+  --color-primary-font: var(--dark--);
+  --color-secondary-font: var(--dark-gray--);
+  --color-background: var(--light-white--);
+  --color-footer: var(--prawn--);
+
+  --standard-radius: 10px;
+}
