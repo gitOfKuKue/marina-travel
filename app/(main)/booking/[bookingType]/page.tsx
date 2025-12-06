@@ -14,6 +14,7 @@ import PhoneInput, { Value } from "react-phone-number-input";
 import Button3 from "@/src/components/buttons/Button3";
 import Button1 from "@/src/components/buttons/Button1";
 import Button2 from "@/src/components/buttons/Button2";
+import useNotification from "@/src/hook/useNotification";
 
 const BookingForm = ({
   params,
@@ -23,6 +24,7 @@ const BookingForm = ({
   const { bookingType } = use(params);
   const { bookings } = useBookings();
   const { convertTitleToLink } = useAgentServices();
+  const { setIsAlert, setAlertText, setAlertStatus } = useNotification();
   const [phoneValue, setPhoneValue] = React.useState<Value>();
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -52,12 +54,22 @@ const BookingForm = ({
     (plan) => convertTitleToLink(plan?.title) === bookingType
   );
 
+  const handleSubmit = () => {
+    setIsAlert(true);
+    setAlertText("Booking successfully!");
+    setAlertStatus(200);
+  };
+
   if (!plan) return null;
 
   return (
     <section className="mb-50 mt-5">
       <Container>
-        <form action="#" className="flex justify-between items-stretch gap-10">
+        <form
+          action="#"
+          className="flex justify-between items-stretch gap-10"
+          onSubmit={handleSubmit}
+        >
           {/* Personal Info */}
           <div className="flex-1 bg-white rounded-4xl overflow-hidden shadow-2xl">
             {/* Image */}

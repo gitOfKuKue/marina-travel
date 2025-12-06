@@ -5,11 +5,11 @@ import React from "react";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <section className="flex flex-col min-h-screen">
       <Navigation />
       <BodyLayout>{children}</BodyLayout>
       <Footer className="mt-auto" />
-    </div>
+    </section>
   );
 };
 

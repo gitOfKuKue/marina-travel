@@ -6,7 +6,6 @@ import moscow from "../../assets/images/Moscow-pana.svg";
 
 import logo from "../../../public/logo/marina-logo.png";
 
-import sunsetBg from "../../assets/images/sunset-background.svg";
 import Container from "./Container";
 import {
   faFacebook,
@@ -42,7 +41,12 @@ const Footer = ({ className }: { className?: string }) => {
       <div
         className={`absolute -top-40 flex items-center justify-between w-full`}
       >
-        <NextImage src={cityBus} alt="City Bus" className="w-80" />
+        <NextImage
+          src={cityBus}
+          alt="City Bus"
+          className="w-80"
+          loading="eager"
+        />
       </div>
 
       <div className="bg-linear-to-t from-footer to-background p-10">
