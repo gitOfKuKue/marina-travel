@@ -15,6 +15,7 @@ import Button3 from "@/src/components/buttons/Button3";
 import Button1 from "@/src/components/buttons/Button1";
 import Button2 from "@/src/components/buttons/Button2";
 import useNotification from "@/src/hook/useNotification";
+import Close from "@/src/components/buttons/Close";
 
 const BookingForm = ({
   params,
@@ -173,8 +174,16 @@ const BookingForm = ({
 
           {/* Trip routes */}
           <div className="flex-1 flex flex-col bg-white rounded-4xl overflow-hidden shadow-2xl p-8">
-            <h1 className="text-2xl font-bold">Travel Routes</h1>
-            <p className="text-secondary-font mb-5">Choose your trip route</p>
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h1 className="text-2xl font-bold">Travel Routes</h1>
+                <p className="text-secondary-font">Choose your trip route</p>
+              </div>
+
+              <div>
+                <Close />
+              </div>
+            </div>
             {/* City */}
             <div className="mb-10">
               <CountrySelector

@@ -33,24 +33,55 @@ const Navigation = () => {
   ];
 
   const [scrolled, setScrolled] = useState(false);
+  const [isServicesActive, setIsServicesActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrolling =
-        window.scrollY || document.documentElement.scrollTop;
+      const currentScrolling = window.scrollY;
+
+      // Header background logic
       if (currentScrolling > 660) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
+
+      // Services section active logic
+      const servicesSection = document.getElementById("services");
+      if (servicesSection) {
+        const { offsetTop, offsetHeight } = servicesSection;
+        const scrollBuffer = 150; // Adjust for header height/visual comfort
+
+        // Check if we are within the services section
+        if (
+          currentScrolling >= offsetTop - scrollBuffer &&
+          currentScrolling < offsetTop + offsetHeight - scrollBuffer
+        ) {
+          setIsServicesActive(true);
+        } else {
+          setIsServicesActive(false);
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const getIsActive = (menuLink: string) => {
+    if (menuLink === "/#services") {
+      return pathname === "/" && isServicesActive;
+    }
+    if (menuLink === "/") {
+      // Home is active only if we are at root AND services is NOT active
+      return pathname === "/" && !isServicesActive;
+    }
+    // For other links (e.g. /booking), match if pathname starts with the link
+    // strict checking for root is already handled above.
+    return pathname.startsWith(menuLink);
+  };
 
   return (
     <header>
@@ -75,7 +106,7 @@ const Navigation = () => {
                 key={menu.title}
                 menu={menu.title}
                 link={menu.link}
-                isClicked={pathname === menu.link}
+                isActive={getIsActive(menu.link)}
               />
             ))}
           </nav>
@@ -89,17 +120,17 @@ const Navigation = () => {
 const MenuButton = ({
   menu,
   link,
-  isClicked,
+  isActive,
 }: {
   menu: string;
   link: string;
-  isClicked: boolean;
+  isActive: boolean;
 }) => {
   return (
     <Link
       href={link}
       className={`${
-        isClicked ? "text-primary font-bold underline" : " text-primary-font"
+        isActive ? "text-primary font-bold underline" : " text-primary-font"
       } w-30 h-10 text-center leading-10 text-xl`}
     >
       {menu}
