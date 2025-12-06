@@ -1,19 +1,22 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
 const Button1 = () => {
   return (
-    <StyledWrapper>
-      <div className="container-button">
-        <div className="hover bt-1" />
-        <div className="hover bt-2" />
-        <div className="hover bt-3" />
-        <div className="hover bt-4" />
-        <div className="hover bt-5" />
-        <div className="hover bt-6" />
-        <button />
-      </div>
-    </StyledWrapper>
+    <Link href="/booking">
+      <StyledWrapper>
+        <div className="container-button">
+          <div className="hover bt-1" />
+          <div className="hover bt-2" />
+          <div className="hover bt-3" />
+          <div className="hover bt-4" />
+          <div className="hover bt-5" />
+          <div className="hover bt-6" />
+          <button />
+        </div>
+      </StyledWrapper>
+    </Link>
   );
 };
 

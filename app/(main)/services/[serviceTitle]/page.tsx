@@ -1,0 +1,41 @@
+"use client";
+import Container from "@/src/components/common-components/Container";
+import useAgentServices from "@/src/hook/useAgentServices";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { use } from "react";
+
+const ServiceDetail = ({
+  params,
+}: {
+  params: Promise<{ serviceTitle: string }>;
+}) => {
+  const { serviceTitle } = use(params);
+  const { services, convertTitleToLink } = useAgentServices();
+
+  const service = services
+    .flatMap((ser) => ser.subServices)
+    .find((s) => convertTitleToLink(s.title) === serviceTitle);
+
+  console.log(service);
+
+  return (
+    <section>
+      <Container>
+        <div className="flex flex-col items-center justify-center p-10 my-20">
+          <FontAwesomeIcon
+            icon={service?.icon}
+            className="text-8xl mb-6 text-primary"
+          />
+          <h1 className="text-5xl font-bold mb-8 text-center">
+            {service?.title}
+          </h1>
+          <p className="text-lg leading-relaxed text-secondary-font max-w-4xl text-center">
+            {service?.details}
+          </p>
+        </div>
+      </Container>
+    </section>
+  );
+};
+
+export default ServiceDetail;

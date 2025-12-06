@@ -3,7 +3,8 @@ import Link from "next/link";
 import NextImage from "next/image";
 import cityBus from "../../assets/images/city bus-cuate.svg";
 import moscow from "../../assets/images/Moscow-pana.svg";
-import { url } from "inspector";
+
+import logo from "../../../public/logo/marina-logo.png";
 
 import sunsetBg from "../../assets/images/sunset-background.svg";
 import Container from "./Container";
@@ -14,8 +15,9 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 
-const Footer = () => {
+const Footer = ({ className }: { className?: string }) => {
   const contacts = [
     {
       platform: "Facebook",
@@ -35,7 +37,7 @@ const Footer = () => {
     },
   ];
   return (
-    <footer className="relative">
+    <footer className={`relative ${className}`}>
       {/* Image */}
       <div
         className={`absolute -top-40 flex items-center justify-between w-full`}
@@ -43,11 +45,14 @@ const Footer = () => {
         <NextImage src={cityBus} alt="City Bus" className="w-80" />
       </div>
 
-      <div className="bg-footer p-10">
+      <div className="bg-linear-to-t from-footer to-background p-10">
         <Container className="h-100 flex items-start justify-between gap-10 py-20">
           {/* Content */}
           <div>
-            <h1 className="text-4xl font-bold mb-3">Marina Travel</h1>
+            <div>
+              <Image src={logo} alt="Marina Logo" className="w-15" />
+              <h1 className="text-4xl font-bold mb-3">Marina Travel</h1>
+            </div>
             <p className="max-w-md mt-2 text-primary-font mb-5">
               Marina Travel is your ultimate guide to exploring the world. We
               provide curated travel experiences, exclusive deals, and
@@ -58,7 +63,7 @@ const Footer = () => {
             <div className="flex items-center gap-5">
               {contacts.map((contact) => (
                 <div key={contact.platform}>
-                  <FontAwesomeIcon icon={contact.icon} className="w-10" />
+                  <FontAwesomeIcon icon={contact.icon} className="text-4xl" />
                 </div>
               ))}
             </div>

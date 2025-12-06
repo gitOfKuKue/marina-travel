@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import Container from "./Container";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
+
+import logo from "../../../public/logo/marina-logo.png";
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -12,16 +15,16 @@ const Navigation = () => {
       link: "/",
     },
     {
-      title: "Destinations",
-      link: "/destinations",
+      title: "About",
+      link: "/about",
+    },
+    {
+      title: "Services",
+      link: "/#services",
     },
     {
       title: "Booking",
       link: "/booking",
-    },
-    {
-      title: "About",
-      link: "/about",
     },
     {
       title: "Contact",
@@ -50,26 +53,35 @@ const Navigation = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-100 ${
-        scrolled ? "bg-background duration-500 transition-all" : "duration-200"
-      }`}
-    >
-      <Container className="flex justify-between items-center py-5">
-        <h1 className="text-2xl font-bold text-primary-font italic">
-          Marina Travel
-        </h1>
-        <nav className="flex justify-between items-center gap-2">
-          {menus.map((menu) => (
-            <MenuButton
-              key={menu.title}
-              menu={menu.title}
-              link={menu.link}
-              isClicked={pathname === menu.link}
-            />
-          ))}
-        </nav>
-      </Container>
+    <header>
+      <div
+        className={`fixed top-0 left-0 right-0 z-100 ${
+          scrolled || pathname !== "/"
+            ? "bg-background duration-500 transition-all"
+            : "duration-200"
+        }`}
+      >
+        <Container className="flex justify-between items-center py-5">
+          <div className="flex items-center gap-2">
+            <Image src={logo} alt="Marina Logo" className="w-15" />
+            <h1 className="text-2xl font-extrabold text-primary-font italic uppercase leading-6">
+              <span className="text-secondary">Marina</span> <br />{" "}
+              <span className="text-primary">Travel</span>
+            </h1>
+          </div>
+          <nav className="flex justify-between items-center gap-2">
+            {menus.map((menu) => (
+              <MenuButton
+                key={menu.title}
+                menu={menu.title}
+                link={menu.link}
+                isClicked={pathname === menu.link}
+              />
+            ))}
+          </nav>
+        </Container>
+      </div>
+      <div className={`${pathname === "/" ? "" : "h-[100px]"}`}> </div>
     </header>
   );
 };

@@ -2,16 +2,24 @@
 
 @theme {
   --aqua--: #008080;
+  --orange--: #ff6d1f;
   --dark--: #0f0e0e;
   --dark-gray--: #393e4695;
+  --mud-gray--: #44444e30;
   --prawn--: #f4afa1;
   --light-white--: #fcf8f8;
 
   --color-primary: var(--aqua--);
+  --color-secondary: var(--orange--);
   --color-primary-font: var(--dark--);
   --color-secondary-font: var(--dark-gray--);
+  --color-hover: var(--mud-gray--);
   --color-background: var(--light-white--);
   --color-footer: var(--prawn--);
 
   --standard-radius: 10px;
+}
+
+* {
+  scroll-behavior: smooth;
 }

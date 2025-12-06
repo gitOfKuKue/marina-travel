@@ -1,13 +1,14 @@
 import React from "react";
 import Send from "../buttons/Send";
+import Container from "../common-components/Container";
 
 const QuickEmail = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-8 max-w-4xl mx-auto my-16">
+    <Container className="flex flex-col items-center justify-center gap-8 max-w-4xl mx-auto my-16">
       <div className="text-center">
         <h2 className="text-4xl font-extrabold text-primary mb-3 tracking-tight">
           Subscribe to our{" "}
-          <span className="italic text-[#FF6D1F]">Newsletter</span>
+          <span className="italic text-secondary">Newsletter</span>
         </h2>
         <p className="text-secondary-font text-lg font-medium">
           Unlock exclusive travel deals & tips directly in your inbox.
@@ -24,7 +25,7 @@ const QuickEmail = () => {
           <Send />
         </form>
       </div>
-    </div>
+    </Container>
   );
 };
 

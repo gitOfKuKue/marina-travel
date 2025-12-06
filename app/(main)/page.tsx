@@ -11,6 +11,7 @@ import Button1 from "@/src/components/buttons/Button1";
 import Promotion from "@/src/components/section-components/Promotion";
 import Benefits from "@/src/components/section-components/Benefits";
 import QuickEmail from "@/src/components/section-components/QuickEmail";
+import Services from "@/src/components/section-components/Services";
 
 const HomePage = () => {
   return (
@@ -22,7 +23,7 @@ const HomePage = () => {
         {/* Content */}
         <div className="absolute w-full top-2/5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <h1 className="text-center text-8xl font-extrabold mb-6">
-            <span className="text-[#FF6D1F] italic">Let's Go</span> <br />{" "}
+            <span className="text-secondary italic">Let's Go</span> <br />{" "}
             <span className="uppercase text-primary">Travel </span>
           </h1>
           <p className="text-center text-xl text-secondary-font w-150 mx-auto mb-20">
@@ -38,7 +39,7 @@ const HomePage = () => {
       </section>
 
       {/* Benefits */}
-      <section className="py-30 bg-background">
+      <section className="py-30">
         <Benefits />
       </section>
 
@@ -47,8 +48,13 @@ const HomePage = () => {
         <Promotion />
       </section>
 
+      {/* Services */}
+      <section className="py-30" id="services">
+        <Services />
+      </section>
+
       {/* Quick Email */}
-      <section className="py-30 bg-background">
+      <section className="py-30">
         <QuickEmail />
       </section>
     </main>
