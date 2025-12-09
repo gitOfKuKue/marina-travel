@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { StaticImageData } from "next/image";
 
 // Image Import
 import { BOOKINGS_DATA } from "../data/bookings";
@@ -7,7 +8,7 @@ interface Booking {
   category: string;
   plans: {
     title: string;
-    image: any;
+    image: StaticImageData;
     description: string;
     priceRange: string;
   }[];
@@ -21,7 +22,7 @@ interface BookingStore {
 
 const useBookings = create<BookingStore>((set) => ({
   bookings: BOOKINGS_DATA,
-  setBookings: (bookings: any) => set({ bookings }),
+  setBookings: (bookings: Booking[]) => set({ bookings }),
 }));
 
 export default useBookings;

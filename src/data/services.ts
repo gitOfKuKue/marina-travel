@@ -13,7 +13,6 @@ import {
   faBuilding,
   faFileLines,
   faHandshake,
-  faPenToSquare,
   faStar,
 } from "@fortawesome/free-regular-svg-icons";
 

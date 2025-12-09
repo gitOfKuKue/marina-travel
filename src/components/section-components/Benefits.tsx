@@ -47,10 +47,12 @@ const Benefits = () => {
   );
 };
 
+import { StaticImageData } from "next/image";
+
 const BenefitCard = ({
   benefit,
 }: {
-  benefit: { title: string; description: string; image: any };
+  benefit: { title: string; description: string; image: StaticImageData };
 }) => {
   return (
     <div className="flex flex-col items-center">

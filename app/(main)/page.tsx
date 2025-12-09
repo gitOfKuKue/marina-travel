@@ -1,18 +1,13 @@
 "use client";
 
-import Lottie from "lottie-react";
 import React from "react";
 
-// import mainPic from "../../src/assets/animated-pics/loading.json";
-import mainPic from "../../src/assets/images/travel selfie-pana.svg";
-import worldMap from "../../src/assets/images/world-map.svg";
 import background from "../../src/assets/images/background.svg";
 import Button1 from "@/src/components/buttons/Button1";
 import Promotion from "@/src/components/section-components/Promotion";
 import Benefits from "@/src/components/section-components/Benefits";
 import QuickEmail from "@/src/components/section-components/QuickEmail";
 import Services from "@/src/components/section-components/Services";
-import Link from "next/link";
 
 const HomePage = () => {
   return (
@@ -25,7 +20,7 @@ const HomePage = () => {
         <div className="z-10 text-center max-w-4xl mx-auto pt-20">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6">
             <span className="text-secondary italic leading-tight">
-              Let's Go
+              Let&apos;s Go
             </span>{" "}
             <br /> <span className="uppercase text-primary">Travel </span>
           </h1>

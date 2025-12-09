@@ -3,17 +3,12 @@
 import Container from "@/src/components/common-components/Container";
 import useAgentServices from "@/src/hook/useAgentServices";
 import useBookings from "@/src/hook/useBookings";
-import Lottie from "lottie-react";
-import Image from "next/image";
 import React, { use } from "react";
 
-import bookingPic from "@/src/assets/animated-pics/animacion mobil.json";
 import CountrySelector from "@/src/components/CountrySelector";
 import "react-phone-number-input/style.css";
 import PhoneInput, { Value } from "react-phone-number-input";
-import Button3 from "@/src/components/buttons/Button3";
-import Button1 from "@/src/components/buttons/Button1";
-import Button2 from "@/src/components/buttons/Button2";
+
 import useNotification from "@/src/hook/useNotification";
 import Close from "@/src/components/buttons/Close";
 import SubmitBtn from "@/src/components/buttons/Submit";
@@ -81,16 +76,7 @@ const BookingForm = ({
     setIsAlert(true);
     setAlertText("Booking successfully!");
     setAlertStatus(200);
-    console.log(
-      name,
-      email,
-      phoneValue,
-      address,
-      peopleCount,
-      country,
-      fromCity,
-      toCity
-    );
+    // console.log removed
     setName("");
     setEmail("");
     setPhoneValue(undefined);

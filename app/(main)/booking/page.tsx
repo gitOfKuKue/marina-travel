@@ -1,7 +1,7 @@
 "use client";
 import Container from "@/src/components/common-components/Container";
-import Image from "next/image";
-import React, { useState } from "react";
+import { StaticImageData } from "next/image";
+import React from "react";
 
 import Button3 from "@/src/components/buttons/Button3";
 import useBookings from "@/src/hook/useBookings";
@@ -11,7 +11,7 @@ const BookingPage = () => {
   const { bookings, setBookings } = useBookings();
   const { convertTitleToLink } = useAgentServices();
   const handleSwapButton = (category: string) => {
-    const updatedBookings = bookings.map((booking: any) => ({
+    const updatedBookings = bookings.map((booking) => ({
       ...booking,
       isSelected: booking.category === category,
     }));
@@ -27,9 +27,9 @@ const BookingPage = () => {
           </h1>
           <p className="text-lg md:text-xl font-medium text-secondary-font max-w-3xl leading-relaxed mb-12">
             Ready to embark on your dream journey? Choose from our wide range of
-            premium travel options below. Whether you're looking for a relaxing
-            cruise, a seamless flight connection, or an immersive local tour, we
-            make booking your next adventure simple and stress-free.
+            premium travel options below. Whether you&apos;re looking for a
+            relaxing cruise, a seamless flight connection, or an immersive local
+            tour, we make booking your next adventure simple and stress-free.
           </p>
         </div>
 
@@ -83,13 +83,21 @@ const BookingPage = () => {
   );
 };
 
+interface CardProps {
+  title: string;
+  image: StaticImageData;
+  description: string;
+  priceRange: string;
+  convertTitleToLink: (title: string) => string;
+}
+
 const Card = ({
   title,
   image,
   description,
   priceRange,
   convertTitleToLink,
-}: any) => {
+}: CardProps) => {
   return (
     <div
       className="flex flex-col justify-end rounded-2xl overflow-hidden w-full h-100 bg-no-repeat bg-cover bg-center shadow-xl hover:scale-102 transition-transform duration-500 hover:shadow-2xl relative"

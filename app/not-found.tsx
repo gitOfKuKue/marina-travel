@@ -7,8 +7,8 @@ const NotFound = () => {
       <h1 className="text-9xl font-extrabold text-[#0066cc]">404</h1>
       <h2 className="text-4xl font-semibold mt-4">Destination Not Found</h2>
       <p className="text-lg mt-2 text-slate-600 max-w-md text-center">
-        Oops! It looks like this location isn't on our map yet. Let's get you
-        back on track.
+        Oops! It looks like this location isn&apos;t on our map yet. Let&apos;s
+        get you back on track.
       </p>
       <Link
         href="/"

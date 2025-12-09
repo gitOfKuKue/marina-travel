@@ -6,7 +6,6 @@ import mainPic from "../../../src/assets/images/travel selfie-pana.svg";
 import worldMap from "../../../src/assets/images/world-map.svg";
 import Container from "../common-components/Container";
 import Button2 from "../buttons/Button2";
-import Link from "next/link";
 
 import explorePic from "@/src/assets/animated-pics/Businessman flies up with rocket.json";
 import Lottie from "lottie-react";

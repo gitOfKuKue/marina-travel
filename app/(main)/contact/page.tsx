@@ -49,8 +49,8 @@ const ContactPage = () => {
             Get in Touch
           </h1>
           <p className="text-lg md:text-xl text-secondary-font font-medium leading-relaxed">
-            Have questions about your next adventure? We're here to help you
-            plan the perfect trip.
+            Have questions about your next adventure? We&apos;re here to help
+            you plan the perfect trip.
           </p>
         </div>
 

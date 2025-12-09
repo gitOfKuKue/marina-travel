@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import NextImage from "next/image";
 import cityBus from "../../assets/images/city bus-cuate.svg";
-import moscow from "../../assets/images/Moscow-pana.svg";
 
 import logo from "../../../public/logo/marina-logo.png";
 
@@ -34,7 +33,7 @@ const Footer = ({ className }: { className?: string }) => {
       platform: "Youtube",
       icon: faYoutube,
     },
-  ];  
+  ];
   return (
     <footer className={`relative ${className}`}>
       {/* Image - Hidden on mobile, visible on lg screens to avoid overlapping */}

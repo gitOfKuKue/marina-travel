@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import Select from "react-select";
+import Select, { SingleValue, StylesConfig } from "react-select";
 import countryList from "react-select-country-list";
 import ReactCountryFlag from "react-country-flag";
 import { City } from "country-state-city";
@@ -11,12 +11,12 @@ interface Option {
 
 interface CountrySelectorProps {
   showCities?: boolean;
-  value?: Option | null;
-  onChange?: (value: Option | null) => void;
-  fromCity?: Option | null;
-  toCity?: Option | null;
-  onChangeFromCity?: (value: Option | null) => void;
-  onChangeToCity?: (value: Option | null) => void;
+  value?: SingleValue<Option> | null;
+  onChange?: (value: SingleValue<Option> | null) => void;
+  fromCity?: SingleValue<Option> | null;
+  toCity?: SingleValue<Option> | null;
+  onChangeFromCity?: (value: SingleValue<Option> | null) => void;
+  onChangeToCity?: (value: SingleValue<Option> | null) => void;
   onlyDestination?: boolean;
   required?: boolean;
 }
@@ -32,10 +32,13 @@ function CountrySelector({
   onlyDestination = false,
   required = false,
 }: CountrySelectorProps) {
-  const [internalCountry, setInternalCountry] = useState<Option | null>(null);
+  const [internalCountry, setInternalCountry] =
+    useState<SingleValue<Option> | null>(null);
   const [cities, setCities] = useState<Option[]>([]);
-  const [internalFromCity, setInternalFromCity] = useState<Option | null>(null);
-  const [internalToCity, setInternalToCity] = useState<Option | null>(null);
+  const [internalFromCity, setInternalFromCity] =
+    useState<SingleValue<Option> | null>(null);
+  const [internalToCity, setInternalToCity] =
+    useState<SingleValue<Option> | null>(null);
 
   // Use controlled value if provided, otherwise internal state
   const country = value !== undefined ? value : internalCountry;
@@ -46,8 +49,8 @@ function CountrySelector({
 
   const options = useMemo(() => countryList().getData(), []);
 
-  const changeHandler = (newValue: unknown) => {
-    const selectedOption = newValue as Option;
+  const changeHandler = (newValue: SingleValue<Option>) => {
+    const selectedOption = newValue;
 
     if (onChange) {
       onChange(selectedOption);
@@ -78,14 +81,14 @@ function CountrySelector({
     }
   };
 
-  const fromCityHandler = (newValue: unknown) => {
-    const val = newValue as Option;
+  const fromCityHandler = (newValue: SingleValue<Option>) => {
+    const val = newValue;
     if (onChangeFromCity) onChangeFromCity(val);
     else setInternalFromCity(val);
   };
 
-  const toCityHandler = (newValue: unknown) => {
-    const val = newValue as Option;
+  const toCityHandler = (newValue: SingleValue<Option>) => {
+    const val = newValue;
     if (onChangeToCity) onChangeToCity(val);
     else setInternalToCity(val);
   };
@@ -104,8 +107,8 @@ function CountrySelector({
     </div>
   );
 
-  const customStyles = {
-    control: (baseStyles: any) => ({
+  const customStyles: StylesConfig<Option, false> = {
+    control: (baseStyles) => ({
       ...baseStyles,
       backgroundColor: "#F4F4F4",
       border: "none",
@@ -119,11 +122,11 @@ function CountrySelector({
       },
       cursor: "pointer",
     }),
-    menu: (baseStyles: any) => ({
+    menu: (baseStyles) => ({
       ...baseStyles,
       zIndex: 9999,
     }),
-    option: (baseStyles: any, state: { isSelected: boolean }) => ({
+    option: (baseStyles, state) => ({
       ...baseStyles,
       cursor: "pointer",
       backgroundColor: state.isSelected ? "#e5e7eb" : "white",
