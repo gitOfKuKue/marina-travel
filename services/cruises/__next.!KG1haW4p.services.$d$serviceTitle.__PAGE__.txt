@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[87206,["/marina-travel/_next/static/chunks/aef24a569a51ca51.js","/marina-travel/_next/static/chunks/e5888531acd9d01a.js","/marina-travel/_next/static/chunks/74733083fb9d726d.js","/marina-travel/_next/static/chunks/572cd10e61352d5f.js","/marina-travel/_next/static/chunks/2705c70e2571f7c3.js"],"default"]
+4:I[97367,["/marina-travel/_next/static/chunks/ff1a16fafef87110.js","/marina-travel/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"buildId":"DUT4SvsxKbJ4iPXUopE_3","rsc":["$","$1","c",{"children":[["$","$L2",null,{"params":"$@3"}],[["$","script","script-0",{"src":"/marina-travel/_next/static/chunks/74733083fb9d726d.js","async":true}],["$","script","script-1",{"src":"/marina-travel/_next/static/chunks/572cd10e61352d5f.js","async":true}],["$","script","script-2",{"src":"/marina-travel/_next/static/chunks/2705c70e2571f7c3.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
+3:{"serviceTitle":"cruises"}
+6:null
