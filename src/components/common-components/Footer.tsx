@@ -34,7 +34,7 @@ const Footer = ({ className }: { className?: string }) => {
       platform: "Youtube",
       icon: faYoutube,
     },
-  ];
+  ];  
   return (
     <footer className={`relative ${className}`}>
       {/* Image - Hidden on mobile, visible on lg screens to avoid overlapping */}
