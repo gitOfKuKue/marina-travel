@@ -43,7 +43,7 @@ const MiniGamePage = () => {
   };
 
   const getRecommendation = () => {
-    let scores = {
+    const scores = {
       beach: 0,
       mountain: 0,
       city: 0,
@@ -246,7 +246,7 @@ const MiniGamePage = () => {
                 {getRecommendation().place}
               </p>
               <p className="text-slate-600 dark:text-slate-300 italic text-lg">
-                "{getRecommendation().desc}"
+                &quot;{getRecommendation().desc}&quot;
               </p>
               <div className="mt-6">
                 <p className="text-sm text-slate-500">
@@ -261,7 +261,7 @@ const MiniGamePage = () => {
           <div>
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 dark:bg-slate-800 dark:border-slate-700 mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 mb-10">
               <h2 className="text-3xl font-bold mb-2 text-center text-slate-800 dark:text-slate-100">
-                Let's get started!
+                Let&apos;s get started!
               </h2>
               <p className="text-center text-slate-700 dark:text-slate-300 mb-8">
                 Tell us a bit about yourself so we can personalize your

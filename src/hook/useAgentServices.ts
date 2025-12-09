@@ -1,11 +1,12 @@
 import { create } from "zustand";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 // Importing Fontawesome icons
 import { SERVICES_DATA } from "../data/services";
 
 interface SubService {
   title: string;
-  icon: any;
+  icon: IconDefinition;
   description: string;
   details: string;
 }
@@ -21,7 +22,7 @@ interface AgentServicesStore {
   convertTitleToLink: (title: string) => string;
 }
 
-const useAgentServices = create<AgentServicesStore>((set) => ({
+const useAgentServices = create<AgentServicesStore>(() => ({
   services: SERVICES_DATA,
 
   convertTitleToLink: (title: string): string => {

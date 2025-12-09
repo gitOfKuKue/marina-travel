@@ -1,0 +1,47 @@
+
+> marina-travel@0.1.0 lint
+> eslint
+
+
+/Users/kukue/Documents/Saigon Business School/Web Development/marina-travel/app/(main)/booking/[bookingType]/BookingClientPage.tsx
+  11:8  warning  'Button3' is defined but never used  @typescript-eslint/no-unused-vars
+  12:8  warning  'Button1' is defined but never used  @typescript-eslint/no-unused-vars
+  13:8  warning  'Button2' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/kukue/Documents/Saigon Business School/Web Development/marina-travel/app/(main)/booking/page.tsx
+  87:10  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+/Users/kukue/Documents/Saigon Business School/Web Development/marina-travel/app/(main)/page.tsx
+   3:8  warning  'Lottie' is defined but never used    @typescript-eslint/no-unused-vars
+   7:8  warning  'mainPic' is defined but never used   @typescript-eslint/no-unused-vars
+   8:8  warning  'worldMap' is defined but never used  @typescript-eslint/no-unused-vars
+  15:8  warning  'Link' is defined but never used      @typescript-eslint/no-unused-vars
+
+/Users/kukue/Documents/Saigon Business School/Web Development/marina-travel/src/components/common-components/BodyLayout.tsx
+  2:8  warning  'Container' is defined but never used   @typescript-eslint/no-unused-vars
+  4:8  warning  'Navigation' is defined but never used  @typescript-eslint/no-unused-vars
+  5:8  warning  'Footer' is defined but never used      @typescript-eslint/no-unused-vars
+
+/Users/kukue/Documents/Saigon Business School/Web Development/marina-travel/src/components/common-components/Footer.tsx
+  5:8  warning  'moscow' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/kukue/Documents/Saigon Business School/Web Development/marina-travel/src/components/common-components/Navigation.tsx
+  77:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/kukue/Documents/Saigon Business School/Web Development/marina-travel/src/components/common-components/Navigation.tsx:77:5
+  75 |   // Close mobile menu when route changes
+  76 |   useEffect(() => {
+> 77 |     setIsMobileMenuOpen(false);
+     |     ^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  78 |   }, [pathname]);
+  79 |
+  80 |   const getIsActive = (menuLink: string) => {  react-hooks/set-state-in-effect
+
+✖ 13 problems (2 errors, 11 warnings)
+

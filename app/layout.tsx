@@ -17,11 +17,6 @@ export const metadata: Metadata = {
     title: "Marina Travel",
     description: "Travel Agency",
   },
-  icons: {
-    icon: "/logo/marina-logo.png",
-    shortcut: "/logo/marina-logo.png",
-    apple: "/logo/marina-logo.png",
-  },
   authors: [{ name: "Ku Kue" }],
   robots: {
     index: true,

@@ -73,8 +73,12 @@ const Navigation = () => {
   }, []);
 
   // Close mobile menu when route changes
+  // Close mobile menu when route changes
   useEffect(() => {
-    setIsMobileMenuOpen(false);
+    const timer = setTimeout(() => {
+      setIsMobileMenuOpen(false);
+    }, 0);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   const getIsActive = (menuLink: string) => {

@@ -23,21 +23,21 @@ const FounderSays = () => {
           &ldquo;
         </span>
         Friends, colleagues, and fellow explorers, I am profoundly honored to
-        stand before you today. When I first envisioned this agency, it wasn't
-        just about booking flights and hotels; it was about recognizing a
-        fundamental human need: the desire to explore, connect, and be
-        transformed by the world around us. We are not just travel agents; we
-        are architects of memories, navigators of dreams, and the indispensable
-        link between the known and the wonderfully unknown. In an age of
-        algorithms and instant information, our value lies in our human touch,
-        our deep expertise, and our unwavering commitment to crafting journeys
-        that are seamless, authentic, and utterly unforgettable. Our purpose
-        goes beyond profit; it is to open minds, bridge cultures, and show every
-        traveler that the investment in an experience is the greatest return
-        they will ever receive. I look forward to continuing this incredible
-        journey with all of you, pushing the boundaries of what travel can be,
-        and ensuring that every person who walks through our doors leaves ready
-        to embrace the next great adventure.
+        stand before you today. When I first envisioned this agency, it
+        wasn&apos;t just about booking flights and hotels; it was about
+        recognizing a fundamental human need: the desire to explore, connect,
+        and be transformed by the world around us. We are not just travel
+        agents; we are architects of memories, navigators of dreams, and the
+        indispensable link between the known and the wonderfully unknown. In an
+        age of algorithms and instant information, our value lies in our human
+        touch, our deep expertise, and our unwavering commitment to crafting
+        journeys that are seamless, authentic, and utterly unforgettable. Our
+        purpose goes beyond profit; it is to open minds, bridge cultures, and
+        show every traveler that the investment in an experience is the greatest
+        return they will ever receive. I look forward to continuing this
+        incredible journey with all of you, pushing the boundaries of what
+        travel can be, and ensuring that every person who walks through our
+        doors leaves ready to embrace the next great adventure.
         <span className="absolute bottom-[-20px] right-4 text-6xl text-primary/20 font-serif rotate-180">
           &rdquo;
         </span>

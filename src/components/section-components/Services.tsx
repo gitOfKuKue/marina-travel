@@ -47,11 +47,13 @@ const Services = () => {
   );
 };
 
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+
 const ServiceCard = ({
   subService,
   convertTitleToLink,
 }: {
-  subService: { icon: any; title: string; description: string };
+  subService: { icon: IconDefinition; title: string; description: string };
   convertTitleToLink: (title: string) => string;
 }) => {
   return (
