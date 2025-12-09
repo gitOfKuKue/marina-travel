@@ -3,8 +3,6 @@ import { Metadata } from "next";
 import "./global.css";
 import BodyLayout from "@/src/components/common-components/BodyLayout";
 
-const basePath = process.env.NODE_ENV === "production" ? "/marina-travel" : "";
-
 export const metadata: Metadata = {
   title: "Marina Travel",
   description: "Travel Agency",
@@ -20,9 +18,9 @@ export const metadata: Metadata = {
     description: "Travel Agency",
   },
   icons: {
-    icon: `${basePath}/logo/marina-logo.png`,
-    shortcut: `${basePath}/logo/marina-logo.png`,
-    apple: `${basePath}/logo/marina-logo.png`,
+    icon: "/logo/marina-logo.png",
+    shortcut: "/logo/marina-logo.png",
+    apple: "/logo/marina-logo.png",
   },
   authors: [{ name: "Ku Kue" }],
   robots: {
