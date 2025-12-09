@@ -166,11 +166,11 @@ const MiniGamePage = () => {
   return (
     <section className="mb-50">
       <Container>
-        <div className="text-center py-20 max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary mb-6 drop-shadow-sm">
+        <div className="text-center py-10 md:py-20 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary mb-6 drop-shadow-sm px-4">
             Unlock Your Next Adventure
           </h1>
-          <p className="text-xl text-secondary-font font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-secondary-font font-medium leading-relaxed px-4">
             Ready to test your luck? Play our mini-game to win exclusive travel
             discounts and let{" "}
             <span className="text-primary font-bold">Marina Agent</span> predict

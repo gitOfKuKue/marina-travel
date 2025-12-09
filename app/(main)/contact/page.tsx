@@ -42,21 +42,21 @@ const ContactPage = () => {
   };
 
   return (
-    <section className="py-20 min-h-screen">
+    <section className="py-10 md:py-20 min-h-screen">
       <Container>
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary mb-6 drop-shadow-sm">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16 px-4">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary mb-6 drop-shadow-sm">
             Get in Touch
           </h1>
-          <p className="text-xl text-secondary-font font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-secondary-font font-medium leading-relaxed">
             Have questions about your next adventure? We're here to help you
             plan the perfect trip.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Contact Info */}
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 dark:bg-slate-800 dark:border-slate-700 h-full">
+          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 dark:bg-slate-800 dark:border-slate-700 h-full">
             <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-8">
               Contact Information
             </h2>
@@ -151,7 +151,7 @@ const ContactPage = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 dark:bg-slate-800 dark:border-slate-700">
+          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-slate-100 dark:bg-slate-800 dark:border-slate-700">
             <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">
               Send us a Message
             </h2>

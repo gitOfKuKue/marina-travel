@@ -21,15 +21,15 @@ const ServiceDetail = ({
   return (
     <section>
       <Container>
-        <div className="flex flex-col items-center justify-center p-10 my-20">
+        <div className="flex flex-col items-center justify-center p-6 my-10 md:p-10 md:my-20">
           <FontAwesomeIcon
             icon={service?.icon}
-            className="text-8xl mb-6 text-primary"
+            className="text-6xl md:text-8xl mb-6 text-primary"
           />
-          <h1 className="text-5xl font-bold mb-8 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-center px-4">
             {service?.title}
           </h1>
-          <p className="text-lg leading-relaxed text-secondary-font max-w-4xl text-center">
+          <p className="text-base md:text-lg leading-relaxed text-secondary-font max-w-4xl text-center">
             {service?.details}
           </p>
         </div>

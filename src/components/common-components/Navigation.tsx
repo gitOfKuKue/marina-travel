@@ -4,6 +4,7 @@ import Container from "./Container";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 import logo from "../../../public/logo/marina-logo.png";
 
@@ -34,6 +35,7 @@ const Navigation = () => {
 
   const [scrolled, setScrolled] = useState(false);
   const [isServicesActive, setIsServicesActive] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,6 +72,11 @@ const Navigation = () => {
     };
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
   const getIsActive = (menuLink: string) => {
     if (menuLink === "/#services") {
       return pathname === "/" && isServicesActive;
@@ -78,8 +85,6 @@ const Navigation = () => {
       // Home is active only if we are at root AND services is NOT active
       return pathname === "/" && !isServicesActive;
     }
-    // For other links (e.g. /booking), match if pathname starts with the link
-    // strict checking for root is already handled above.
     return pathname.startsWith(menuLink);
   };
 
@@ -87,20 +92,22 @@ const Navigation = () => {
     <header>
       <div
         className={`fixed top-0 left-0 right-0 z-100 ${
-          scrolled || pathname !== "/"
-            ? "bg-background duration-500 transition-all"
+          scrolled || pathname !== "/" || isMobileMenuOpen
+            ? "bg-background duration-500 transition-all shadow-md"
             : "duration-200"
         }`}
       >
-        <Container className="flex justify-between items-center py-5">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src={logo} alt="Marina Logo" className="w-15" />
-            <h1 className="text-2xl font-extrabold text-primary-font italic uppercase leading-6">
+        <Container className="flex justify-between items-center py-4 md:py-5">
+          <Link href="/" className="flex items-center gap-2 z-50">
+            <Image src={logo} alt="Marina Logo" className="w-12 md:w-15" />
+            <h1 className="text-xl md:text-2xl font-extrabold text-primary-font italic uppercase leading-tight md:leading-6">
               <span className="text-secondary">Marina</span> <br />{" "}
               <span className="text-primary">Travel</span>
             </h1>
           </Link>
-          <nav className="flex justify-between items-center gap-2">
+
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex justify-between items-center gap-2">
             {menus.map((menu) => (
               <MenuButton
                 key={menu.title}
@@ -110,9 +117,46 @@ const Navigation = () => {
               />
             ))}
           </nav>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden z-50 p-2 text-primary"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+          </button>
+
+          {/* Mobile Menu Overlay */}
+          <div
+            className={`fixed inset-0 bg-background/95 backdrop-blur-sm z-40 flex flex-col items-center justify-center transition-all duration-300 ease-in-out md:hidden ${
+              isMobileMenuOpen
+                ? "opacity-100 pointer-events-auto translate-x-0"
+                : "opacity-0 pointer-events-none translate-x-full"
+            }`}
+          >
+            <nav className="flex flex-col items-center gap-6">
+              {menus.map((menu) => (
+                <Link
+                  key={menu.title}
+                  href={menu.link}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-2xl font-bold ${
+                    getIsActive(menu.link)
+                      ? "text-primary"
+                      : "text-primary-font"
+                  }`}
+                >
+                  {menu.title}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </Container>
       </div>
-      <div className={`${pathname === "/" ? "" : "h-[100px]"}`}> </div>
+      {/* Spacer for fixed header */}
+      <div className={`${pathname === "/" ? "" : "h-[80px] md:h-[100px]"}`}>
+        {" "}
+      </div>
     </header>
   );
 };
@@ -131,7 +175,7 @@ const MenuButton = ({
       href={link}
       className={`${
         isActive ? "text-primary font-bold underline" : " text-primary-font"
-      } w-30 h-10 text-center leading-10 text-xl`}
+      } w-24 lg:w-30 h-10 text-center leading-10 text-lg lg:text-xl`}
     >
       {menu}
     </Link>

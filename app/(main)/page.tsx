@@ -18,16 +18,18 @@ const HomePage = () => {
   return (
     <main>
       <section
-        className="flex items-center justify-between bg-no-repeat bg-cover h-screen"
+        className="relative flex items-center justify-center bg-no-repeat bg-cover h-screen px-4"
         style={{ backgroundImage: `url(${background.src})` }}
       >
         {/* Content */}
-        <div className="absolute w-full top-2/5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-center text-8xl font-extrabold mb-6">
-            <span className="text-secondary italic">Let's Go</span> <br />{" "}
-            <span className="uppercase text-primary">Travel </span>
+        <div className="z-10 text-center max-w-4xl mx-auto pt-20">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6">
+            <span className="text-secondary italic leading-tight">
+              Let's Go
+            </span>{" "}
+            <br /> <span className="uppercase text-primary">Travel </span>
           </h1>
-          <p className="text-center text-xl text-secondary-font w-150 mx-auto mb-20">
+          <p className="text-lg md:text-xl text-secondary-font max-w-2xl mx-auto mb-10 md:mb-20 leading-relaxed bg-white/50 backdrop-blur-xs p-4 rounded-xl md:bg-transparent md:backdrop-blur-none">
             Discover the world with us. Dive into new adventures, explore hidden
             gems, and create unforgettable memories that will last a lifetime.
             Join our community of explorers today and start writing your own

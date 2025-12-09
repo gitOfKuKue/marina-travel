@@ -30,13 +30,15 @@ const Benefits = () => {
   ];
   return (
     <Container>
-      <h1 className="text-center font-bold text-5xl">Why Choose Us?</h1>
-      <p className="text-center text-secondary-font mt-5 w-150 mx-auto mb-20">
+      <h1 className="text-center font-bold text-4xl md:text-5xl">
+        Why Choose Us?
+      </h1>
+      <p className="text-center text-secondary-font mt-5 max-w-2xl mx-auto mb-10 md:mb-20">
         Discover why hundreds of travelers choose us for their next adventure.
         For expert guides to exclusive deals, we make your journey
         unforgettable. Join us and experience the difference.
       </p>
-      <div className="flex items-center justify-evenly gap-10">
+      <div className="flex flex-col md:flex-row items-center justify-evenly gap-10">
         {benefits.map((benefit) => (
           <BenefitCard key={benefit.title} benefit={benefit} />
         ))}
@@ -51,14 +53,16 @@ const BenefitCard = ({
   benefit: { title: string; description: string; image: any };
 }) => {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <NextImage
         src={benefit.image}
         alt={benefit.title}
         className="w-40 mx-auto mb-5"
       />
-      <p className="text-center font-bold text-3xl mb-5">{benefit.title}</p>
-      <p className="text-center text-secondary-font w-100">
+      <p className="text-center font-bold text-2xl md:text-3xl mb-5">
+        {benefit.title}
+      </p>
+      <p className="text-center text-secondary-font max-w-xs mx-auto">
         {benefit.description}
       </p>
     </div>

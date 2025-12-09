@@ -10,7 +10,7 @@ const FounderSays = () => {
         A Message from Our Founder
       </h1>
 
-      <div className="w-80 h-80 overflow-hidden rounded-full mx-auto mb-10">
+      <div className="w-60 h-60 md:w-80 md:h-80 overflow-hidden rounded-full mx-auto mb-10">
         <Image
           src={founderPic}
           alt="Founder"
@@ -18,7 +18,7 @@ const FounderSays = () => {
         />
       </div>
 
-      <p className="text-lg md:text-xl text-secondary-font leading-relaxed text-justify relative px-8 md:px-12 py-8 bg-white/50 rounded-2xl border border-primary/10 shadow-sm">
+      <p className="text-base md:text-xl text-secondary-font leading-relaxed text-justify relative px-6 md:px-12 py-8 bg-white/50 rounded-2xl border border-primary/10 shadow-sm">
         <span className="absolute top-0 left-4 text-6xl text-primary/20 font-serif">
           &ldquo;
         </span>

@@ -101,24 +101,24 @@ const BookingForm = ({
       <Container>
         <form
           action="#"
-          className="flex justify-between items-stretch gap-10"
+          className="flex flex-col lg:flex-row justify-between items-stretch gap-10"
           onSubmit={handleSubmit}
         >
           {/* Personal Info */}
-          <div className="flex-1 bg-white rounded-4xl overflow-hidden shadow-2xl">
+          <div className="flex-1 bg-white rounded-3xl lg:rounded-4xl overflow-hidden shadow-2xl">
             {/* Image */}
             <div
               style={{ backgroundImage: `url(${plan?.image.src})` }}
-              className="w-full h-80 bg-cover bg-no-repeat bg-center"
+              className="w-full h-60 md:h-80 bg-cover bg-no-repeat bg-center"
             ></div>
 
             {/* Form */}
-            <div className="p-8">
-              <h1 className="text-4xl">
+            <div className="p-6 md:p-8">
+              <h1 className="text-3xl md:text-4xl mb-2">
                 Book for{" "}
                 <span className="text-primary font-bold">{plan?.title}</span>
               </h1>
-              <p className="text-secondary-font mb-10">
+              <p className="text-secondary-font mb-8 md:mb-10">
                 Fill out the form below to book your {plan?.title}.
               </p>
 
@@ -139,9 +139,9 @@ const BookingForm = ({
               </div>
 
               {/* Email and Phone */}
-              <div className="flex items-center justify-between gap-5 mb-5">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-5 mb-5">
                 {/* Email */}
-                <div className="flex-1">
+                <div className="flex-1 w-full">
                   <label
                     htmlFor="email"
                     className="text-lg text-secondary-font"
@@ -160,7 +160,7 @@ const BookingForm = ({
                 </div>
 
                 {/* Phone */}
-                <div className="flex-1">
+                <div className="flex-1 w-full">
                   <label
                     htmlFor="phone"
                     className="text-lg text-secondary-font"

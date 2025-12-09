@@ -34,13 +34,13 @@ const BookingPage = () => {
         </div>
 
         <div>
-          <div className="flex items-center gap-3 mb-3">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 mb-6">
             {bookings.map((booking) => (
               <button
                 type="button"
                 key={booking.category}
                 onClick={() => handleSwapButton(booking.category)}
-                className={` text-primary w-50 h-15 text-center leading-15 rounded-full font-bold transition-all duration-300 ${
+                className={` text-primary w-40 md:w-50 h-12 md:h-15 text-center leading-12 md:leading-15 rounded-full font-bold transition-all duration-300 text-sm md:text-base ${
                   booking.isSelected
                     ? "bg-primary text-white"
                     : "bg-white border border-primary hover:bg-hover"
@@ -57,13 +57,13 @@ const BookingPage = () => {
               <div key={booking.category}>
                 {booking.isSelected && (
                   <div>
-                    <h2 className="text-2xl text-secondary-font font-bold mb-5">
+                    <h2 className="text-xl md:text-2xl text-secondary-font font-bold mb-5 text-center md:text-left">
                       <span className="text-primary font-bold">
                         {booking.plans.length}
                       </span>{" "}
                       Plans in {booking.category}.
                     </h2>
-                    <div className="grid grid-cols-3 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
                       {booking.plans.map((plan) => (
                         <Card
                           key={plan.title}
