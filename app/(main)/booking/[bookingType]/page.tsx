@@ -16,6 +16,7 @@ import Button1 from "@/src/components/buttons/Button1";
 import Button2 from "@/src/components/buttons/Button2";
 import useNotification from "@/src/hook/useNotification";
 import Close from "@/src/components/buttons/Close";
+import SubmitBtn from "@/src/components/buttons/Submit";
 
 const BookingForm = ({
   params,
@@ -55,10 +56,42 @@ const BookingForm = ({
     (plan) => convertTitleToLink(plan?.title) === bookingType
   );
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (
+      !name ||
+      !email ||
+      !phoneValue ||
+      !address ||
+      !peopleCount ||
+      !country
+    ) {
+      setIsAlert(true);
+      setAlertText("Please fill out all fields!");
+      setAlertStatus(400);
+      return;
+    }
     setIsAlert(true);
     setAlertText("Booking successfully!");
     setAlertStatus(200);
+    console.log(
+      name,
+      email,
+      phoneValue,
+      address,
+      peopleCount,
+      country,
+      fromCity,
+      toCity
+    );
+    setName("");
+    setEmail("");
+    setPhoneValue(undefined);
+    setAddress("");
+    setPeopleCount(1);
+    setCountry(null);
+    setFromCity(null);
+    setToCity(null);
   };
 
   if (!plan) return null;
@@ -102,7 +135,6 @@ const BookingForm = ({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="bg-[#F4F4F4] w-full h-15 px-5 py-2 rounded-(--standard-radius) text-xl box-border"
-                  required
                 />
               </div>
 
@@ -124,7 +156,6 @@ const BookingForm = ({
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="bg-[#F4F4F4] w-full h-15 px-5 py-2 rounded-(--standard-radius) text-xl box-border"
-                    required
                   />
                 </div>
 
@@ -146,7 +177,6 @@ const BookingForm = ({
                     onChange={setPhoneValue}
                     id="phone"
                     className="bg-[#F4F4F4] w-full h-15 px-5 py-2 rounded-(--standard-radius) text-xl box-border [&>input]:bg-transparent [&>input]:outline-none [&>input]:text-xl"
-                    required
                   />
                 </div>
               </div>
@@ -166,7 +196,6 @@ const BookingForm = ({
                   placeholder="e.g. 123 Main St, City, Country"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
-                  required
                 ></textarea>
               </div>
             </div>
@@ -194,7 +223,6 @@ const BookingForm = ({
                 onChangeFromCity={setFromCity}
                 onChangeToCity={setToCity}
                 showCities={true}
-                required
                 onlyDestination={
                   !(
                     plan?.title === "Flights" ||
@@ -326,9 +354,10 @@ const BookingForm = ({
               </div>
             </div>
 
-            <button type="submit" className="mt-auto">
-              <Button2 text="Submit" />
-            </button>
+            {/* <Button2 text="Submit" href="#" /> */}
+            <div className="mt-auto flex justify-end">
+              <SubmitBtn />
+            </div>
           </div>
         </form>
       </Container>

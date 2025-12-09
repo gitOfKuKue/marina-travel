@@ -12,6 +12,7 @@ import Promotion from "@/src/components/section-components/Promotion";
 import Benefits from "@/src/components/section-components/Benefits";
 import QuickEmail from "@/src/components/section-components/QuickEmail";
 import Services from "@/src/components/section-components/Services";
+import Link from "next/link";
 
 const HomePage = () => {
   return (
@@ -33,7 +34,7 @@ const HomePage = () => {
             unique travel story.
           </p>
           <div className="w-fit mx-auto">
-            <Button1 />
+            <Button1 href="/booking" />
           </div>
         </div>
       </section>
@@ -49,12 +50,12 @@ const HomePage = () => {
       </section>
 
       {/* Services */}
-      <section className="py-30" id="services">
+      <section className="pt-30 pb-10" id="services">
         <Services />
       </section>
 
       {/* Quick Email */}
-      <section className="py-30">
+      <section className="pt-10 pb-30">
         <QuickEmail />
       </section>
     </main>

@@ -93,13 +93,13 @@ const Navigation = () => {
         }`}
       >
         <Container className="flex justify-between items-center py-5">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Image src={logo} alt="Marina Logo" className="w-15" />
             <h1 className="text-2xl font-extrabold text-primary-font italic uppercase leading-6">
               <span className="text-secondary">Marina</span> <br />{" "}
               <span className="text-primary">Travel</span>
             </h1>
-          </div>
+          </Link>
           <nav className="flex justify-between items-center gap-2">
             {menus.map((menu) => (
               <MenuButton

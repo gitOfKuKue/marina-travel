@@ -8,7 +8,7 @@ const Button3 = ({ text, href }: { text: string; href: string }) => {
   return (
     <Link href={href}>
       <StyledWrapper>
-        <button className="btn">{text}</button>
+        <div className="btn">{text}</div>
       </StyledWrapper>
     </Link>
   );

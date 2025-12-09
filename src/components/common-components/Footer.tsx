@@ -38,9 +38,7 @@ const Footer = ({ className }: { className?: string }) => {
   return (
     <footer className={`relative ${className}`}>
       {/* Image */}
-      <div
-        className={`absolute -top-40 flex items-center justify-between w-full`}
-      >
+      <div className={`absolute -top-40 inline-block`}>
         <NextImage
           src={cityBus}
           alt="City Bus"
@@ -79,9 +77,9 @@ const Footer = ({ className }: { className?: string }) => {
             <ul className="flex flex-col gap-3">
               {[
                 { title: "Home", link: "/" },
-                { title: "Destinations", link: "/destinations" },
-                { title: "Booking", link: "/booking" },
                 { title: "About", link: "/about" },
+                { title: "Services", link: "/#services" },
+                { title: "Booking", link: "/booking" },
                 { title: "Contact", link: "/contact" },
               ].map((link) => (
                 <li key={link.title}>

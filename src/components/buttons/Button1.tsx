@@ -2,9 +2,9 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-const Button1 = () => {
+const Button1 = ({ href = "#" }: { href: string }) => {
   return (
-    <Link href="/booking">
+    <Link href={href}>
       <StyledWrapper>
         <div className="container-button">
           <div className="hover bt-1" />

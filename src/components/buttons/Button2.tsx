@@ -1,15 +1,16 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-const Button2 = ({ text }: { text: string }) => {
+const Button2 = ({ text, href = "#" }: { text: string; href: string }) => {
   return (
     <StyledWrapper>
-      <a className="fancy" href="#">
+      <Link className="fancy" href={href}>
         <span className="top-key" />
         <span className="text">{text}</span>
         <span className="bottom-key-1" />
         <span className="bottom-key-2" />
-      </a>
+      </Link>
     </StyledWrapper>
   );
 };
