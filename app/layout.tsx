@@ -6,26 +6,8 @@ import BodyLayout from "@/src/components/common-components/BodyLayout";
 export const metadata: Metadata = {
   title: "Marina Travel",
   description: "Travel Agency",
-  keywords: ["Travel", "Vietnam", "Tours", "Booking", "Marina Travel"],
-  openGraph: {
-    title: "Marina Travel",
-    description: "Experience the best travel agency services.",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Marina Travel",
-    description: "Travel Agency",
-  },
   icons: {
     icon: "/logo/marina-logo.png",
-    shortcut: "/logo/marina-logo.png",
-    apple: "/logo/marina-logo.png",
-  },
-  authors: [{ name: "Ku Kue" }],
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
